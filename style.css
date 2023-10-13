@@ -1,0 +1,374 @@
+@font-face {
+    font-family: manuka;
+    src: url(./manuka-regular.ttf);
+    font-weight: 500;
+  }
+  
+  @font-face {
+    font-family: manuka;
+    font-weight: 700;
+    src: url(./manuka-bold.ttf);
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  .cursor {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #a3c698;
+    position: absolute;
+    transition: 10ms linear;
+    z-index: 5;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: manuka;
+  }
+  
+  html, body {
+    height: 100%;
+    width: 100%;
+  }
+  
+  #nav {
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    z-index: 9;
+    padding: 1vw 3vw;
+    font-size: xxx-large;
+    font-weight: 600;
+    color: #ddd;
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  #nav .country {
+    width: 1.3vw;
+    fill: #fff;
+  }
+  
+  #nav-part2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+    color: #848484;
+  }
+  
+  #page1 {
+    height: 100vh;
+    width: 100%;
+    scale: 0.8;
+    background-color: #241f11;
+    border-radius: 5px;
+    position: relative;
+  }
+  
+  #content button {
+    padding: 1.5vw 3.5vw;
+    color: #fff;
+    border: 2px solid #fff;
+    background-color: transparent;
+    font-size: 2.5vw;
+    position: absolute;
+    bottom: 5%;
+    right: 3%;
+    font-family: manuka;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+  
+  #texture {
+    height: 100%;
+    width: 100%;
+    background-image: url(./bg-texture.jpg);
+    opacity: 0.5;
+    position: absolute;
+  }
+  
+  #timer {
+    height: 10vw;
+    width: 18vw;
+    overflow: hidden;
+    position: absolute;
+    bottom: 4%;
+    right: 2%;
+    color: #fff;
+    text-align: right;
+    z-index: 99;
+  }
+  
+  #timer h1 {
+    font-size: 8vw;
+    font-weight: 800;
+    font-family: manuka;
+    transition-delay: 1s;
+    transition: all ease 0.8s;
+  }
+  
+  #page1 button {
+    padding: 1.45vw 4.2vw;
+    font-size: 2.6vw;
+    text-transform: uppercase;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    transition-delay: 1s;
+    transition: all ease 0.8s;
+    font-weight: 900;
+    opacity: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  button::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    bottom: -100%;
+    transition: all ease 0.4s;
+    left: 0;
+  }
+  
+  button:hover::after {
+    bottom: 0;
+  }
+  
+  button span {
+    position: relative;
+    transition: all ease 0.4s;
+    z-index: 9;
+  }
+  
+  button:hover span {
+    color: #000;
+  }
+  
+  #content {
+    position: relative;
+    z-index: 9;
+    color: #fff;
+    padding: 4vw 4vw;
+    padding-top: 10vw;
+  }
+  
+  #content h1 {
+    font-family: manuka;
+    font-weight: 100;
+    text-transform: uppercase;
+    font-size: 20vw;
+    line-height: 18vw;
+  }
+  
+  #content h1 span {
+    font-weight: 900;
+  }
+  
+  #content #ami {
+    height: 40vw;
+    position: fixed;
+    top: 7%;
+    z-index: -1;
+    left: 51%;
+    opacity: 0;
+  }
+  
+  #page2 {
+    height: 125vh;
+    width: 500vw;
+    position: relative;
+    display: flex;
+  }
+  
+  #page2-part1 {
+    height: 100%;
+    width: 100vw;
+    padding: 5vw;
+    padding-top: 10vw;
+  }
+  
+  #page2-part2 {
+    height: 75%;
+    width: 300vw;
+  }
+  
+  #page2-part1 h1 {
+    font-family: manuka;
+    font-size: 4.8vw;
+    color: #ddd;
+  }
+  
+  #page2-part1 h1 span {
+    font-family: manuka;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 350px);
+    gap: 35px;
+    padding: 80px 35px;
+    justify-content: center;
+  }
+  
+  .card {
+    border-radius: 35px;
+    overflow: hidden;
+    height: 100%;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 500px;
+  }
+  .card__top {
+    position: relative;
+    background-color: var(--accentComplimentary);
+    padding: 30px 30px 65px 30px;
+    z-index: 0;
+    display: flex;
+    align-items: flex-start;
+  }
+  .card__top:has(.card__figure) {
+    aspect-ratio: 1.5;
+  }
+  .card__bottom {
+    position: relative;
+    margin-top: -35px;
+    background-color: var(--accent);
+    padding: 35px;
+    border-radius: 35px;
+    display: flex;
+    gap: 60px;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    z-index: 1;
+  }
+  .card__figure {
+    position: absolute;
+    inset: 0;
+    mix-blend-mode: lighten;
+    opacity: 0.5;
+  }
+  .card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .card__tag {
+    padding: 10px 20px;
+    border: 1px solid currentColor;
+    border-radius: 2em;
+    position: relative;
+    z-index: 1;
+  }
+  .card__title {
+    font-size: 2.5rem;
+  }
+  .card__text {
+    font-size: 1.25rem;
+  }
+  .card--reverse {
+    flex-direction: column-reverse;
+  }
+  .card--reverse .card__bottom {
+    margin-top: 0;
+    margin-bottom: -35px;
+  }
+  .card--reverse .card__top {
+    position: relative;
+    padding: 70px 35px 35px 35px;
+    align-items: flex-end;
+  }
+  .card--primary {
+    --accent: #ffbe76;
+    --accentComplimentary: #5d4e60;
+  }
+  .card--secondary {
+    --accent: #a3c698;
+    --accentComplimentary: #4f5d2f;
+  }
+  .card--tertiary {
+    --accent: #a0acad;
+    --accentComplimentary: #353531;
+  }
+  
+  #page3{
+    height: 100vh;
+    width: 100%;
+    background-color: #1e1a0b;
+    color: #1e1a0b;
+    padding: 5vw;
+  }
+
+  #page4 {
+    height: 0px;
+    width: 100%;
+    background-color: #1e1a0b;
+  }
+  
+  .container2 {
+    display: flex;
+    flex-direction: column;
+    height: 200vh;
+  }
+  
+  .text {
+    font-size: 10vw;
+    letter-spacing: -0.01em;
+    line-height: 100%;
+    margin: 0;
+  
+    width: 100%;
+    color: rgb(182, 182, 182, 0.2);
+    background: linear-gradient(to right, #b6b6b6, #b6b6b6) no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 0%;
+    transition: background-size cubic-bezier(0.1, 0.5, 0.5, 1) 0.5s;
+  
+    border-bottom: 1px solid #2f2b28;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+  }
+  
+  p {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #a3c698;
+    color: #0d0d0d;
+  
+    clip-path: polygon(0 50%, 100% 50%, 100% 50%, 0 50%);
+    transform-origin: center;
+    transition: all cubic-bezier(0.1, 0.5, 0.5, 1) 0.4s;
+  }
+  
+  .text:hover > p {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+
+
+  
