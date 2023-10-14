@@ -20,7 +20,7 @@
     border-radius: 50%;
     background-color: #a3c698;
     position: absolute;
-    transition: 10ms linear;
+    transition: 20ms linear;
     z-index: 5;
   }
   
@@ -98,10 +98,10 @@
   #timer {
     height: 10vw;
     width: 18vw;
-    overflow: hidden;
+    overflow: hidden;    
+    right: 2%;
     position: absolute;
     bottom: 4%;
-    right: 2%;
     color: #fff;
     text-align: right;
     z-index: 99;
@@ -109,8 +109,8 @@
   
   #timer h1 {
     font-size: 8vw;
-    font-weight: 800;
     font-family: manuka;
+    font-weight: 800;    
     transition-delay: 1s;
     transition: all ease 0.8s;
   }
@@ -120,12 +120,12 @@
     font-size: 2.6vw;
     text-transform: uppercase;
     border-radius: 5px;
-    background-color: transparent;
-    border: 2px solid #fff;
-    color: #fff;
     transition-delay: 1s;
     transition: all ease 0.8s;
     font-weight: 900;
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
     opacity: 0;
     position: relative;
     overflow: hidden;
@@ -277,10 +277,7 @@
   .card__title {
     font-size: 2.5rem;
   }
-  .card__text {
-    font-size: 1.25rem;
-  }
-  .card--reverse {
+   .card--reverse {
     flex-direction: column-reverse;
   }
   .card--reverse .card__bottom {
